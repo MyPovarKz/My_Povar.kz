@@ -1,5 +1,6 @@
 const SUPABASE_URL = "https://hgqbuugyabmyzhtitdns.supabase.co";
 const SUPABASE_KEY = "sb_publishable_cUHKXZ2UgudRveqcmNdQiQ_qobOnLCl";const tg=window.Telegram?.WebApp; if(tg){tg.ready();tg.expand();}
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 let dishes=[];
 let cart=[];
 const cards=document.getElementById("cards");
