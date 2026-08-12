@@ -13,10 +13,5 @@ const text="Новый заказ «Мой Повар»%0A"+cart.map(x=>`${x.nam
 if(tg?.openTelegramLink)tg.openTelegramLink("https://t.me/share/url?url=&text="+text);
 else alert("Заказ сформирован. В следующей версии подключим отправку продавцу.");}
 function openModal(html){document.getElementById("modalContent").innerHTML=html;document.getElementById("modal").classList.remove("hidden")}
-function closeModal(){document.getElementById("modal").classList.add("hidden")}
-document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(b.dataset.cat,document.getElementById("search").value)});
-document.getElementById("search").oninput=e=>render(document.querySelector(".chip.active").dataset.cat,e.target.value);
-document.getElementById("profileBtn").onclick=()=>openModal("<h2>👤 Профиль</h2><p>Войдите через Telegram — профиль будет создан автоматически.</p>");
-document.getElementById("profileNav").onclick=()=>openModal("<h2>👤 Профиль</h2><p>Здесь будут ваши данные, адреса, избранное и история заказов.</p>");
-document.getElementById("ordersBtn").onclick=()=>openModal("<h2>📦 Заказы</h2><p>Пока заказов нет.</p>");
+function closeModal(){document.getElementById("modal").classList.add("hidden")}document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(b.dataset.cat,document.getElementById("search").value)});document.getElementById("search").oninput=e=>render(document.querySelector(".chip.active").dataset.cat,e.target.value);document.getElementById("profileBtn").onclick=()=>openModal("<h2>👤 Профиль</h2><p>Войдите через Telegram — профиль будет создан автоматически.</p>");document.getElementById("profileNav").onclick=()=>openModal("<h2>👤 Профиль</h2><p>Здесь будут ваши данные, адреса, избранное и история заказов.</p>");document.getElementById("ordersBtn").onclick=()=>openModal("<h2>📦 Заказы</h2><p>Пока заказов нет.</p>");
 loadDishes();
