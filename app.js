@@ -1,11 +1,6 @@
 const SUPABASE_URL = "https://hgqbuugyabmyzhtitdns.supabase.co";
 const SUPABASE_KEY = "sb_publishable_cUHKXZ2UgudRveqcmNdQiQ_qobOnLCl";const tg=window.Telegram?.WebApp; if(tg){tg.ready();tg.expand();}
-const dishes=[
- {id:1,cat:"kazakh",name:"Бешбармак",meta:"Айгуль · 4.9",price:4500,emoji:"🍖"},
- {id:2,cat:"kazakh",name:"Куырдак",meta:"Айгуль · 4.9",price:3800,emoji:"🥘"},
- {id:3,cat:"european",name:"Лазанья",meta:"Марат · 4.8",price:4200,emoji:"🍝"},
- {id:4,cat:"bakery",name:"Домашний торт",meta:"Айгуль · 5.0",price:5500,emoji:"🍰"}
-];
+let dishes=[];
 let cart=[];
 const cards=document.getElementById("cards");
 function render(filter="all",q=""){
