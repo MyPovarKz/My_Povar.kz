@@ -3,6 +3,7 @@ const SUPABASE_KEY = "sb_publishable_cUHKXZ2UgudRveqcmNdQiQ_qobOnLCl";const tg=w
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 let dishes=[];
 let cart=[];
+async function loadDishes(){const {data,error}=await supabase.from("dishes").select("*");if(error){console.error(error);return;}dishes=data||[];render();}
 const cards=document.getElementById("cards");
 function render(filter="all",q=""){
  const list=dishes.filter(x=>(filter==="all"||x.cat===filter)&&(!q||x.name.toLowerCase().includes(q.toLowerCase())));
@@ -24,4 +25,4 @@ document.getElementById("search").oninput=e=>render(document.querySelector(".chi
 document.getElementById("profileBtn").onclick=()=>openModal("<h2>👤 Профиль</h2><p>Войдите через Telegram — профиль будет создан автоматически.</p>");
 document.getElementById("profileNav").onclick=()=>openModal("<h2>👤 Профиль</h2><p>Здесь будут ваши данные, адреса, избранное и история заказов.</p>");
 document.getElementById("ordersBtn").onclick=()=>openModal("<h2>📦 Заказы</h2><p>Пока заказов нет.</p>");
-render();
+loadDishes();
