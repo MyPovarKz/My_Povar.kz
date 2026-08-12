@@ -1,4 +1,5 @@
-const tg=window.Telegram?.WebApp; if(tg){tg.ready();tg.expand();}
+const SUPABASE_URL = "https://hgqbuugyabmyzhtitdns.supabase.co";
+const SUPABASE_KEY = "sb_publishable_cUHKXZ2UgudRveqcmNdQiQ_qobOnLCl";const tg=window.Telegram?.WebApp; if(tg){tg.ready();tg.expand();}
 const dishes=[
  {id:1,cat:"kazakh",name:"Бешбармак",meta:"Айгуль · 4.9",price:4500,emoji:"🍖"},
  {id:2,cat:"kazakh",name:"Куырдак",meta:"Айгуль · 4.9",price:3800,emoji:"🥘"},
