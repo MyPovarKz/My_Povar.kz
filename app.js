@@ -7,6 +7,7 @@ async function loadDishes(){const {data,error}=await supabase.from("Dishes").sel
 dishes=data||[];
 render();}
 const cards=document.getElementById("cards");
+loadDishes();
 function render(filter="all",q=""){const list=dishes.filter(x=>(filter==="all"||x.cat===filter)&&(!q||x.name.toLowerCase().includes(q.toLowerCase())));cards.innerHTML=list.map(x=>`<article class="card"><div class="pic">${x.emoji}</div><div class="info"><div class="name">${x.name}</div><div class="meta">${x.meta}</div><span class="price">${x.price.toLocaleString()} ₸</span><button class="add" onclick="add(${x.id})">+</button></div></article>`).join("");}
 function add(id){const x=dishes.find(d=>d.id===id);cart.push(x);document.getElementById("count").textContent=cart.length; if(tg?.HapticFeedback)tg.HapticFeedback.impactOccurred("light")}
 
