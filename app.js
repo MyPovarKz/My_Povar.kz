@@ -3,7 +3,7 @@ const SUPABASE_KEY = "sb_publishable_cUHKXZ2UgudRveqcmNdQiQ_qobOnLCl";const tg=w
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 let dishes=[];
 let cart=[];
-async function loadDishes(){const {data,error}=await supabase.from("dishes").select("*");
+async function loadDishes(){const {data,error}=await supabase.from("Dishes").select("*");
 dishes=data||[];
 render();}
 const cards=document.getElementById("cards");
