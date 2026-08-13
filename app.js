@@ -3,7 +3,7 @@ const SUPABASE_KEY = "sb_publishable_cUHKXZ2UgudRveqcmNdQiQ_qobOnLCl";const tg=w
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 let dishes=[];
 let cart=[];
-async function loadDishes(){const {data,error}=await supabase.from("Dishes").select("*");if(error){alert("Ошибка Dishes: "+error.message);return;}dishes=data||[];render();}
+async function loadDishes(){const {data,error}=await supabase.from("Dishes").select("*");alert("Dishes: "+(data?data.length:0)+" | "+(error?error.message:"OK"));if(error)return;dishes=data||[];render();}
 dishes=data||[];
 render();}
 const cards=document.getElementById("cards");
